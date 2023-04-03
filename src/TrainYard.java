@@ -66,7 +66,8 @@ public class TrainYard {
           connectionMatrix[row][lineScanner.nextInt()] = true;
         }
         if (lineScanner.hasNext()) {
-          locations[row] = new Train(lineScanner.next());
+          String name = lineScanner.nextLine();
+          locations[row] = new Train(name);
         }
       }
     } catch (FileNotFoundException e) {

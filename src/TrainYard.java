@@ -54,6 +54,8 @@ public class TrainYard {
   private static void fillConnectionsAndLocations(boolean[][] connectionMatrix, File connection,
       Train[] locations) {
     try (Scanner sc = new Scanner(connection)) {
+      // forgot to skip header
+      sc.nextLine();
       while (sc.hasNextLine()) {
         String line = sc.nextLine();
         Scanner lineScanner = new Scanner(line);

@@ -94,6 +94,7 @@ public class TrainYardTests {
       }
     } catch (Exception e) {
       // Some unexpected exception
+      e.printStackTrace();
       System.err.println(
           "Some Unexpected Exception was thrown: \n" + e.getClass().getSimpleName() + ": " +
               e.getMessage());

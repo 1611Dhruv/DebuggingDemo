@@ -21,6 +21,6 @@ class Train{
   }
 
   public void setLocation(int location){
-    location = location;
+    this.location = location;
   }
 }

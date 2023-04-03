@@ -43,6 +43,9 @@ public class TrainYardTests {
       if (!Arrays.deepEquals(expectedConnections, yard.getConnectionMatrix())) {
         return false;
       }
+
+      // Checking trains:
+
       Train[] expectedTrains = new Train[11];
       // Assigns expected trains
       {
@@ -66,25 +69,31 @@ public class TrainYardTests {
       if (actualTrains.length != 11) {
         return false;
       }
+      // For loop to check for trains
       for (int k = 0; k < expectedTrains.length; k++) {
 
         Train expectedTrain = expectedTrains[k];
         Train actualTrain = actualTrains[k];
 
+        // If the expected train is null and actual train is not, return false
         if (expectedTrain == null && actualTrain != null) {
           return false;
         }
+        // continue if the expectedTrain is null
         if (expectedTrain == null) {
           continue;
         }
+        // Check if the actual trains location and expected trains location are the same
         if (actualTrain.getLocation() != expectedTrain.getLocation()) {
           return false;
         }
+        // Check if the actual train's name and expected trains name are not the same
         if (!actualTrain.getName().equals(expectedTrain.getName())) {
           return false;
         }
       }
     } catch (Exception e) {
+      // Some unexpected exception
       System.err.println(
           "Some Unexpected Exception was thrown: \n" + e.getClass().getSimpleName() + ": " +
               e.getMessage());

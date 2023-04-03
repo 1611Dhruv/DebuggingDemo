@@ -66,9 +66,11 @@ public class TrainYardTests {
       if (actualTrains.length != 11) {
         return false;
       }
-      int k = 0;
-      for (Train expectedTrain : expectedTrains) {
+      for (int k = 0; k < expectedTrains.length; k++) {
+
+        Train expectedTrain = expectedTrains[k];
         Train actualTrain = actualTrains[k];
+
         if (expectedTrain == null && actualTrain != null) {
           return false;
         }
